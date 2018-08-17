@@ -1,7 +1,6 @@
 
-/* tslint:disable:no-any */
-function accumulate(collection: any[], accumulator: (item: any) => any): any[] {
-    const transformedCollection: any[] = []
+function accumulate<T, U>(collection: T[], accumulator: (item: T) => U): U[] {
+    const transformedCollection = []
     for (const item of collection) {
         transformedCollection.push(accumulator(item))
     }
